@@ -3,7 +3,6 @@
   hosts: hw1
   become: yes
   gather_facts: no
-  sudo: yes  
   tasks:
   - name: install apache2
     apt: 
@@ -17,7 +16,7 @@
   - name: git pull
     git:
         repo=https://github.com/jackiequach/cse356hw1.git 
-        dest=/home/ubuntu/
+        dest=/home/ubuntu/cse356hw1
   - name: move html file to web server
     copy:
         src: /home/ubuntu/cse356hw1/hw0.html
