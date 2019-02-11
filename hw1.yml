@@ -5,14 +5,10 @@
   gather_facts: no
   sudo: yes  
   tasks:
-  - name: install python
-    
-  - name: update
-	apt:
-		update_cache=yes
   - name: install apache2
 	apt: 
 		name=apache2 
+		update_cache=yes
         state=present
   - name: restart apache2
 	service:
