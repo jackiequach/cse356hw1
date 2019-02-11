@@ -17,12 +17,12 @@
   - name: git pull
     git:
         repo=https://github.com/jackiequach/cse356hw1.git 
-        dest=/home/ubuntu/tmp
+        dest=/home/ubuntu/
   - name: move html file to web server
     copy:
-        src: /home/ubuntu/tmp/hw0.html
+        src: /home/ubuntu/cse356hw1/hw0.html
         dest: /var/www/html/hw0.html
   - name: delete tmp dir
     file:
-        path: /home/ubuntu/tmp
+        path: /home/ubuntu/cse356hw1
         state: absent
