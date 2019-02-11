@@ -1,0 +1,28 @@
+---
+- name: Automate web server
+  hosts: hw1
+  sudo: yes  
+  tasks:
+  - name: update
+	apt:
+		update_cache=yes
+  - name: install apache2
+	apt: 
+		name=apache2 
+        state=present
+  - name: restart apache2
+	service:
+		name=apache2 
+        state=restarted
+  - name: git pull
+    git:
+        repo=https://github.com/jackiequach/cse356hw1.git 
+        dest=/home/ubuntu/tmp
+  - name: move html file to web server
+    copy:
+        src: /home/ubuntu/tmp/hw0.html
+        dest: /var/www/html/hw0.html
+  - name: delete tmp dir
+    file:
+        path: /home/ubuntu/tmp
+        state: absent
