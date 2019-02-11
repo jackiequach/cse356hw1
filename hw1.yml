@@ -21,7 +21,7 @@
         repo=https://github.com/jackiequach/cse356hw1.git 
         dest=/home/ubuntu/cse356hw1
   - name: move html file to web server
-    copy:
+    synchronize:
         src: /home/ubuntu/cse356hw1/hw0.html
         dest: /var/www/html/hw0.html
   - name: delete tmp dir
