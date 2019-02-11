@@ -6,13 +6,13 @@
   sudo: yes  
   tasks:
   - name: install apache2
-	apt: 
-		name=apache2 
-		update_cache=yes
+    apt: 
+        name=apache2 
+        update_cache=yes
         state=present
   - name: restart apache2
-	service:
-		name=apache2 
+    service:
+        name=apache2 
         state=restarted
   - name: git pull
     git:
